@@ -3,7 +3,7 @@ import { StyleSheet, Image, Text, View, ScrollView } from 'react-native';
 import { useSelector, useDispatch } from "react-redux";
 import { FlatGrid } from 'react-native-super-grid';
 
-function MainScreen() {
+function MainScreen(props) {
     const MainScreenData = useSelector((state) => state.MainScreen);
     const leftBarSelectedId = useSelector((state) => state.leftBarSelectedId);
     return (
@@ -13,7 +13,7 @@ function MainScreen() {
             style={styles.MainScreen}
             spacing={20}
             renderItem={({ item }) => (
-                <View style={styles.MainScreenItemCard}>
+                <View style={styles.MainScreenItemCard} >
                     <Image source={item.image} style={styles.MainScreenItemCardImage}/>
                     <View style={styles.MainScreenItemTextDiv}>
                         <Text style={styles.MainScreenItemTextTop}>{item.title}</Text>
